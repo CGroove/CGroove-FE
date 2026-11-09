@@ -43,7 +43,7 @@ function setupPasswordEvents() {
   const passwordInput = document.getElementById('passwordInput');
   
   passwordInput.addEventListener('blur', () => {
-    validatePassword(passwordInput.value.trim(), formValidation);
+    validatePassword(passwordInput.value.trim(), formValidation, true);
     updateButtonState(formValidation);
   });
   
@@ -64,7 +64,7 @@ function setupFormSubmit() {
     
     // 검증
     const emailValid = validateEmail(email, formValidation);
-    const passwordValid = validatePassword(password, formValidation);
+    const passwordValid = validatePassword(password, formValidation, true);
     
     if (!emailValid || !passwordValid) {
       return;
